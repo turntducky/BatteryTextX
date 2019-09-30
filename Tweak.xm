@@ -5,7 +5,7 @@
 	double percentage = (float)[device batteryLevel] * 100; // Multiply by 100 to get a readable float
 	NSString *charging; // Create empty string in memory
 	UIDeviceBatteryState deviceBatteryState = [UIDevice currentDevice].batteryState; // Get the current state of the battery
-	if (deviceBatteryState == UIDeviceBatteryStateCharging || deviceBatteryState == UIDeviceBatteryStateFull) {
+	if (deviceBatteryState == UIDeviceBatteryStateCharging || deviceBatteryState == UIDeviceBatteryStateFull) { // If the device is charging and battery is full
 		charging = @"Charging: "; // First part of the charging text
 	} else { // If device isn't charging and if the devices battery isn't full
 		charging = @"Not charging: "; // First part of the non charging text
