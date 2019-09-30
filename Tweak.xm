@@ -7,7 +7,8 @@
 	UIDeviceBatteryState deviceBatteryState = [UIDevice currentDevice].batteryState; // Get the current state of the battery
 	if (deviceBatteryState == UIDeviceBatteryStateCharging || deviceBatteryState == UIDeviceBatteryStateFull) { // If the device is charging and battery is full
 		charging = @"Charging: "; // First part of the charging text
-	} else { // If device isn't charging and if the devices battery isn't full
+	} 
+	if(deviceBatteryState == UIDeviceBatteryStateUnplugged) { // If device isn't charging and if the devices battery isn't full
 		charging = @"Not charging: "; // First part of the non charging text
 	}
 	NSString *final = [NSString stringWithFormat:@"%@%.f%%", charging, percentage]; // Final part stes the format for showing charging or not and battery %
